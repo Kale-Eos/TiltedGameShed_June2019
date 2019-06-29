@@ -7,14 +7,16 @@ namespace WaterKat
 {
     public class Scr_Camera : MonoBehaviour
     {
-        Camera PlayerCamera;
+        public DummyCamera PlayerCamera;
         Transform PlayerTransform;
         Rigidbody PlayerRigidBody;
 
         Vector3 GeneralOffset = new Vector3(0, 1f, 0);
 
+        public float CameraZoomSpeed = 0.01f;
+
         Vector3 GunPivot = new Vector3(0f, 0f, 0f);
-        Vector3 GunOffset = new Vector3(1f, 0f, -2.5f);
+        Vector3 GunOffset = new Vector3(0f, 0f, -2.5f);
 
         public Vector2 CameraXClamp;
         //public Vector2 CameraYClamp;
@@ -40,7 +42,7 @@ namespace WaterKat
 
         void Start()
         {
-            PlayerCamera = GetComponentInChildren<Camera>();
+            //PlayerCamera = GetComponentInChildren<DummyCamera>();
             PlayerTransform = transform.Find("HitBox");
             PlayerRigidBody = PlayerTransform.gameObject.GetComponent<Rigidbody>();
 
@@ -73,20 +75,21 @@ namespace WaterKat
         }
 
         // Update is called once per frame
-        void FixedUpdate()
+        void LateUpdate()
         {
             if (Input.GetMouseButton(1) )
             {
-                inputTransition = Mathf.Clamp(inputTransition - 0.1f, 0, 1);
+                inputTransition = Mathf.Clamp(inputTransition - CameraZoomSpeed, 0, 1);
             }
             else
             {
-                inputTransition = Mathf.Clamp(inputTransition + 0.1f, 0, 1);
+                inputTransition = Mathf.Clamp(inputTransition + CameraZoomSpeed, 0, 1);
             }
 
             CameraXRotation += -WKInput.instance.CameraY.Get() * MouseSensitivity * Mathf.Clamp(1f, 1.25f, CameraXClamp.y);
             CameraYRotation += WKInput.instance.CameraX.Get() * MouseSensitivity * Mathf.Clamp(1f, 1.25f, CameraXClamp.y);
 
+            /*
             CameraZDistance = Mathf.Min(CameraXRotation, 20);
             if (CameraZDistance < 20)
             {
@@ -95,7 +98,7 @@ namespace WaterKat
             else
             {
                 CameraZDistance = 1;
-            }
+            }*/
 
             CameraXRotation = Mathf.Clamp(CameraXRotation, CameraXClamp.x, CameraXClamp.y);
             //CameraYRotation = Mathf.Clamp(CameraYRotation, CameraYClamp.x, CameraYClamp.y);
@@ -112,11 +115,15 @@ namespace WaterKat
             Vector3 PlatformerPosition = PlayerTransform.position + GeneralOffset + ((CameraRotation * PlatformerOffset) * CameraZDistance);
             Quaternion PlatformerRotation = CameraRotation;
 
-            PlayerCamera.transform.rotation = Quaternion.Lerp(CameraRotation, PlatformerRotation, InputTransition);
-            PlayerCamera.transform.position = Vector3.Lerp(GunPosition, PlatformerPosition, InputTransition);
+            var spawnPoint= Vector3.Lerp(GunPosition, PlatformerPosition, InputTransition);
+
+            var hitColliders = Physics.OverlapSphere(spawnPoint, 0.5f);//1 is purely chosen arbitrarly
 
 
+                PlayerCamera.transform.rotation = Quaternion.Lerp(CameraRotation, PlatformerRotation, InputTransition);
+                PlayerCamera.transform.position = Vector3.Lerp(GunPosition, PlatformerPosition, InputTransition);
 
+            /*
             Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
             ray.origin = Camera.main.transform.position + (Camera.main.transform.forward * Vector3.Lerp(GunPosition, PlatformerPosition, InputTransition).z * -1);
             RaycastHit hit;
@@ -128,14 +135,14 @@ namespace WaterKat
             {
                 Vector3 tempvel = GetComponentInChildren<Rigidbody>().velocity;
                 tempvel.y = 0;
-                transform.Find("HitBox").transform.LookAt(transform.Find("HitBox").transform.position + tempvel);
+                //transform.Find("HitBox").transform.LookAt(transform.Find("HitBox").transform.position + tempvel);
                 //transform.Find("HitBox").transform.Find("Gun").transform.LookAt(hit.point);
             }
             else
             {
                 if (GetComponent<Rigidbody>().velocity.magnitude < 0.01f)
                 {
-                    transform.Find("HitBox").transform.LookAt(transform.Find("HitBox").transform.position + (Quaternion.Euler(0, Camera.main.transform.rotation.eulerAngles.y, 0) * Vector3.forward * 10));
+                    //transform.Find("HitBox").transform.LookAt(transform.Find("HitBox").transform.position + (Quaternion.Euler(0, Camera.main.transform.rotation.eulerAngles.y, 0) * Vector3.forward * 10));
                     //transform.Find("HitBox").transform.Find("Gun").transform.rotation = new Quaternion();
                 }
                 else
@@ -146,6 +153,7 @@ namespace WaterKat
                     //transform.Find("HitBox").transform.Find("Gun").transform.rotation = new Quaternion();
                 }
             }
+            */
         }
     }
 }
