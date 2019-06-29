@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bca726faefc4944998da7634b3099f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
+  speed: 35
   Move: {fileID: 0}
   Stay: {fileID: 0}
 --- !u!114 &48230964666383358
@@ -81,9 +81,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JumpState: 0
   MaxAvailableJumps: 2
-  GroundJumpHeight: 5
-  AirJumpHeight: 5
-  GroundJumpTime: 1
+  GroundJumpHeight: 2.5
+  AirJumpHeight: 2.5
+  GroundJumpTime: 0.75
   FallingGravityRatio: 1.5
 --- !u!114 &48230964666383359
 MonoBehaviour:
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerCamera: {fileID: 48230965302034520}
-  CameraZoomSpeed: 0.01
+  CameraZoomSpeed: 0.05
   CameraXClamp: {x: -89, y: 89}
   CameraXRotation: 0
   CameraYRotation: 0
@@ -387,7 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff2166d0478e7cd4790daa093ebed382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraScript: {fileID: 0}
+  cameraScript: {fileID: 48230964666383298}
 --- !u!1 &48230966432509409
 GameObject:
   m_ObjectHideFlags: 0

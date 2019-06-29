@@ -13,7 +13,7 @@ namespace WaterKat
 
         Vector3 GeneralOffset = new Vector3(0, 1f, 0);
 
-        public float CameraZoomSpeed = 0.01f;
+        public float CameraZoomSpeed = 0.05f;
 
         Vector3 GunPivot = new Vector3(0f, 0f, 0f);
         Vector3 GunOffset = new Vector3(0f, 0f, -2.5f);
@@ -77,14 +77,9 @@ namespace WaterKat
         // Update is called once per frame
         void LateUpdate()
         {
-            if (Input.GetMouseButton(1) )
-            {
-                inputTransition = Mathf.Clamp(inputTransition - CameraZoomSpeed, 0, 1);
-            }
-            else
-            {
-                inputTransition = Mathf.Clamp(inputTransition + CameraZoomSpeed, 0, 1);
-            }
+
+                inputTransition = Mathf.Clamp(inputTransition + -Input.mouseScrollDelta.y*CameraZoomSpeed, 0, 1);
+
 
             CameraXRotation += -WKInput.instance.CameraY.Get() * MouseSensitivity * Mathf.Clamp(1f, 1.25f, CameraXClamp.y);
             CameraYRotation += WKInput.instance.CameraX.Get() * MouseSensitivity * Mathf.Clamp(1f, 1.25f, CameraXClamp.y);
