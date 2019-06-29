@@ -9,11 +9,11 @@ namespace WaterKat
         #region "Grounded"
         public float GroundDistance = 0.5f;
         float SphereRadius =0f;
-
+        public Transform gameObject;
         public bool CheckIfGrounded()
         {
             bool Grounded = false;
-            Ray downwards = new Ray(transform.position, Vector3.down * (1 - SphereRadius + GroundDistance));
+            Ray downwards = new Ray(gameObject.position, Vector3.down * (1 - SphereRadius + GroundDistance));
             RaycastHit hit;
 
             if (Physics.Raycast(downwards,  out hit, downwards.direction.magnitude))
@@ -25,7 +25,7 @@ namespace WaterKat
         public bool CheckIfGrounded(out Vector3 _groundVelocity)
         {
             bool Grounded = false;
-            Ray downwards = new Ray(transform.position, Vector3.down * (1-SphereRadius + GroundDistance));
+            Ray downwards = new Ray(gameObject.position, Vector3.down * (1-SphereRadius + GroundDistance));
             RaycastHit hit;
             if (Physics.SphereCast(downwards,SphereRadius, out hit, downwards.direction.magnitude))
             {

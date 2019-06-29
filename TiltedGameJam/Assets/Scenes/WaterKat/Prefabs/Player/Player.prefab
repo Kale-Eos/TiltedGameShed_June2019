@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GroundDistance: 0.7
+  gameObject: {fileID: 48230966432509408}
 --- !u!114 &48230964666383297
 MonoBehaviour:
   m_ObjectHideFlags: 0
