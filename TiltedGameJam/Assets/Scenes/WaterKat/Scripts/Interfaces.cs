@@ -9,6 +9,6 @@ namespace WaterKat
         int Health { get; set; }
         void Heal(int _heal);
         void Damage(int _damage);
-
+        void Die();
     }
 }

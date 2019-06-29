@@ -78,7 +78,7 @@ namespace WaterKat {
                 AvailableJumps = MaxAvailableJumps;
             }
 
-            if ((JumpPressed) && (AvailableJumps > 0))
+            if (((JumpPressed) && (AvailableJumps > 0)) || Input.GetKey("p"))
             {
                 AvailableJumps -= 1;
                 JumpState = PlayerJumpState.Jumping;
