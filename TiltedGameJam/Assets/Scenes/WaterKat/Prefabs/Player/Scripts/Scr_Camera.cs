@@ -40,38 +40,41 @@ namespace WaterKat
 
         public float CameraZDistance = 1;
 
+
         void Start()
         {
+
             //PlayerCamera = GetComponentInChildren<DummyCamera>();
             PlayerTransform = transform.Find("HitBox");
             PlayerRigidBody = PlayerTransform.gameObject.GetComponent<Rigidbody>();
 
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+  
         }
 
-        public bool PLAYERLOCK = true;
-        private void Update()
-        {
-            if (PLAYERLOCK)
-            {
-                if (Input.GetKey("escape"))
-                {
-                    UnityEditor.EditorApplication.isPlaying = false;
-                }
-                if (Input.GetKey("`"))
-                {
-                    Cursor.lockState = CursorLockMode.None;
-                    Cursor.visible = true;
-                }
-                if (Input.GetMouseButton(0))
-                {
-                    Cursor.lockState = CursorLockMode.Locked;
-                    Cursor.visible = false;
+        
+        //private void Update()
+        //{
+        //    if (PLAYERLOCK)
+        //    {
+        //        if (Input.GetKey("escape"))
+        //        {
+        //            UnityEditor.EditorApplication.isPlaying = false;
+        //        }
+        //        if (Input.GetKey("`"))
+        //        {
+        //            Cursor.lockState = CursorLockMode.None;
+        //            Cursor.visible = true;
+        //        }
+        //        if (Input.GetMouseButton(0))
+        //        {
+        //            Cursor.lockState = CursorLockMode.Locked;
+        //            Cursor.visible = false;
 
-                }
-            }
-        }
+        //        }
+        //    }
+        //}
 
         void AdjustPlayer()
         {
