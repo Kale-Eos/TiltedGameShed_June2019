@@ -155,7 +155,6 @@ namespace WaterKat {
                     break;
             }
 
-            NewVelocity.y = Mathf.Clamp(NewVelocity.y,-100,30);
             PlayerRB.velocity = NewVelocity;
         }
     }

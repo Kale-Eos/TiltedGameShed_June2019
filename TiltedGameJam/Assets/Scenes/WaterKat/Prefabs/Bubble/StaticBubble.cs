@@ -7,6 +7,11 @@ namespace WaterKat {
     {
         [SerializeField]
         private float bounce = 20;
+        public GameObject testbox;
+        private void Start()
+        {
+            testbox = transform.Find("HitBox").gameObject;
+        }
 
         public void Die()
         {
