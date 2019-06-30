@@ -10,7 +10,8 @@ namespace WaterKat {
         [SerializeField]
         private float speed;
         [SerializeField]
-        Vector3 DesiredPosition = Vector3.zero;
+        private float bounce = 20;
+        public Vector3 DesiredPosition = Vector3.zero;
                 
         public int Health { get { return health; } set { } }
 
@@ -47,6 +48,27 @@ namespace WaterKat {
             {
                 GetComponent<Rigidbody>().velocity = Vector3.zero;
             }
-        }   
+        }
+        private void OnCollisionEnter(Collision collision)
+        {
+            Player testplayer = collision.collider.gameObject.GetComponent<Player>();
+            if (testplayer != null)
+            {
+                Rigidbody rb = collision.collider.gameObject.GetComponent<Rigidbody>();
+                if (rb!= null)
+                {
+                    rb.velocity = rb.velocity + (Vector3.up * bounce);
+
+                }
+                Jump jump = collision.collider.gameObject.GetComponent<Jump>();
+                if (jump != null)
+                {
+                    jump.JumpState = Jump.PlayerJumpState.SlowFalling;
+
+                }
+            }
+            WKAudio.PlayAudio("Pop");
+            Destroy(this.gameObject);
+        }
     }
 }
