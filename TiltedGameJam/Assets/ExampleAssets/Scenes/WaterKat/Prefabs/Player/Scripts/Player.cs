@@ -7,15 +7,16 @@ namespace WaterKat
     public class Player : MonoBehaviour
     {
         #region "Grounded"
-        public float GroundDistance = 0.15f;
-        float SphereRadius = 0.6f;
-
+        public float GroundDistance = 0.5f;
+        float SphereRadius =0f;
+        public Transform gameObject;
         public bool CheckIfGrounded()
         {
             bool Grounded = false;
-            Ray downwards = new Ray(transform.position, Vector3.down * (1 - SphereRadius + GroundDistance));
+            Ray downwards = new Ray(gameObject.position, Vector3.down * (1 - SphereRadius + GroundDistance));
             RaycastHit hit;
-            if (Physics.SphereCast(downwards, SphereRadius, out hit, downwards.direction.magnitude))
+
+            if (Physics.Raycast(downwards,  out hit, downwards.direction.magnitude))
             {
                 Grounded = true;
             }
@@ -24,7 +25,7 @@ namespace WaterKat
         public bool CheckIfGrounded(out Vector3 _groundVelocity)
         {
             bool Grounded = false;
-            Ray downwards = new Ray(transform.position, Vector3.down * (1-SphereRadius + GroundDistance));
+            Ray downwards = new Ray(gameObject.position, Vector3.down * (1-SphereRadius + GroundDistance));
             RaycastHit hit;
             if (Physics.SphereCast(downwards,SphereRadius, out hit, downwards.direction.magnitude))
             {

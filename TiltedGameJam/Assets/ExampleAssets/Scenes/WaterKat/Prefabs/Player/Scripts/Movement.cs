@@ -70,9 +70,11 @@ namespace WaterKat
             if (!CurrentPlayer.CheckIfGrounded())
             {
                 GetComponent<Collider>().material = Move;
+                DirectionalVelocity *= .25f;
             }
             else
             {
+
                 if (Direction.magnitude < 0.1f)
                 {
                     GetComponent<Collider>().material = Stay;
@@ -84,10 +86,10 @@ namespace WaterKat
             }
             //Debug.Log("Moving");
             transform.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(DirectionalVelocity.x, transform.gameObject.GetComponent<Rigidbody>().velocity.y, DirectionalVelocity.z));
-            if (DirectionalVelocity.magnitude < 0.5f)
+          /*  if (DirectionalVelocity.magnitude < 0.5f)
             {
                 transform.gameObject.GetComponent<Rigidbody>().AddForce(-transform.gameObject.GetComponent<Rigidbody>().velocity);
-            }
+            }*/
         }
     }
 }
