@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SlimeM
-  m_Shader: {fileID: -6465566751694194690, guid: e9652003e3aa6904e80ef45ce77b1a29,
+  m_Name: LavaM
+  m_Shader: {fileID: -6465566751694194690, guid: 4931b3ece86d7be40add0aae926a9637,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -19,14 +19,14 @@ Material:
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - Texture2D_CD9D8690:
+        m_Texture: {fileID: 2800000, guid: 5adb6ecfa79bf224690f6e41b6afd317, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_1F3DFDFE: 1
-    - Vector1_373B5436: 0.25
-    - Vector1_41D2C0AA: 1
-    - Vector1_4EBD640C: 2
-    - Vector1_69FDBB5D: 5
-    - Vector1_A1259B37: 0.25
+    - Vector1_71182DD9: 0.5
+    - Vector1_F08C7B68: 3
     m_Colors:
-    - Color_52F76F5D: {r: 1, g: 0, b: 0.8772964, a: 1}
-    - Color_C0F87B8E: {r: 0, g: 0, b: 0, a: 0}
+    - Color_386CB7B3: {r: 1, g: 0.3160377, b: 0.3160377, a: 0}
+    - Color_8CD07ACD: {r: 0.62264144, g: 0, b: 0, a: 1}
