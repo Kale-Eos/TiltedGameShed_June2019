@@ -38,6 +38,12 @@ public class Sound
     {
         source.Stop();              // stops sound
     }
+
+    //public void getVolume()
+    //{
+
+    //}
+
 }
 
 public class AudioManager : MonoBehaviour
@@ -103,4 +109,10 @@ public class AudioManager : MonoBehaviour
         // No Sound Warning
         Debug.LogWarning("AudioManager: Sound ~" + _name + "~ not found in library");
     }
+
+    //private float volume;
+    //public void MasterVolumeSwitch()
+    //{
+    //    volume = sound.volume - .01f;
+    //}
 }
