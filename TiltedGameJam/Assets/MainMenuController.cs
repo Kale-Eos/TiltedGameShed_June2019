@@ -172,7 +172,7 @@ public class MainMenuController : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("JScene");
+        SceneManager.LoadScene("SceneJ1");
     }
 
     public void Options()
@@ -192,6 +192,6 @@ public class MainMenuController : MonoBehaviour
 
     public void RestartLevel()
     {
-         SceneManager.LoadScene("JScene");
+         SceneManager.LoadScene("SceneJ1");
     }
 }

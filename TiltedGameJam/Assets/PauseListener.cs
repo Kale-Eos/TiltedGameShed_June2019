@@ -29,7 +29,9 @@ public class PauseListener : MonoBehaviour
             isPaused = false;
             Debug.Log("Game is playing");
             pauseMenu.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+     
         }
         else
         {
@@ -37,6 +39,7 @@ public class PauseListener : MonoBehaviour
             isPaused = true;
             Debug.Log("Game is paused");
             pauseMenu.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
     }
