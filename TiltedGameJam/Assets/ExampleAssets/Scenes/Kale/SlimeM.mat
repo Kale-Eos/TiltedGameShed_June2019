@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SlimeM
+  m_Name: SLimeM
   m_Shader: {fileID: -6465566751694194690, guid: e9652003e3aa6904e80ef45ce77b1a29,
     type: 3}
   m_ShaderKeywords: 
