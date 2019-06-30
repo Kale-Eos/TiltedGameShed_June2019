@@ -79,3 +79,10 @@ MonoBehaviour:
     RandomVolume: 0
     RandomTempo: 0
     loop: 0
+  - name: Pop
+    clip: {fileID: 8300000, guid: 034fadfbc9dd9434a891116d90b7fae8, type: 3}
+    volume: 1
+    tempo: 1
+    RandomVolume: 0
+    RandomTempo: 0
+    loop: 0
