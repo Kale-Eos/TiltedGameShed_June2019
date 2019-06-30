@@ -49,8 +49,10 @@ namespace WaterKat {
 
         void CalculateDesiredJump()
         {
-            RisingGravity = (2f * GroundJumpHeight) / Mathf.Pow(GroundJumpTime, 2);
+            RisingGravity = Mathf.Max((2f * GroundJumpHeight) / Mathf.Pow(GroundJumpTime, 2),0);
             FallingGravity = RisingGravity * FallingGravityRatio;
+
+            Debug.Log("Gravity" + RisingGravity);
 
             GroundJumpVelocity = GroundJumpTime * RisingGravity;
             AirJumpVelocity = RisingGravity * Mathf.Sqrt(2 * AirJumpHeight / RisingGravity);
@@ -71,8 +73,8 @@ namespace WaterKat {
             bool JumpPressed = WKInput.instance.Jump.Down();
             bool JumpHeld = WKInput.instance.Jump.Held();
 
-            Vector3 GroundVelocity;
-            bool Grounded = CurrentPlayer.CheckIfGrounded(out GroundVelocity);
+            Vector3 GroundVelocity=Vector3.zero;
+            bool Grounded = CurrentPlayer.CheckIfGrounded();//out GroundVelocity);
 
             if (Grounded)
             {
@@ -153,6 +155,7 @@ namespace WaterKat {
                     break;
             }
 
+            NewVelocity.y = Mathf.Clamp(NewVelocity.y,-100,30);
             PlayerRB.velocity = NewVelocity;
         }
     }
