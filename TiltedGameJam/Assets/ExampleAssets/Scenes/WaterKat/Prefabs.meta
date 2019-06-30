@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:TiltedGameJam/Assets/ExampleAssets/Scenes/WaterKat/Prefabs.meta
 guid: 30c4c2aac34a9144db95171f23329695
+=======
+guid: 13db8caa5a3e7464f8fdb0312d6224f4
+>>>>>>> 052c254d3a515f39ab8f70c7f21f9fe8c4bcb4dc:TiltedGameJam/Assets/ExampleAssets/Scenes/WaterKat/Prefabs.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

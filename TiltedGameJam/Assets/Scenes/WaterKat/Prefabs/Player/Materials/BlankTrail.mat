@@ -2,6 +2,9 @@
 %TAG !u! tag:unity3d.com,2011:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 052c254d3a515f39ab8f70c7f21f9fe8c4bcb4dc
 --- !u!114 &-6888735991739479875
 =======
 <<<<<<< HEAD
@@ -43,9 +46,12 @@ Material:
 =======
 >>>>>>> 9bd9660ea93c39797fd1babc6e29491205163d79
 >>>>>>> 5a6a4f6f3faf1452f8429bd6803c2d8901fb8855
+<<<<<<< HEAD
 =======
   m_ShaderKeywords: 
 >>>>>>> parent of 5c4594a... Added pause menu prefab
+=======
+>>>>>>> 052c254d3a515f39ab8f70c7f21f9fe8c4bcb4dc
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -133,9 +139,12 @@ Material:
     - _EnvironmentReflections: 0
 >>>>>>> 9bd9660ea93c39797fd1babc6e29491205163d79
 >>>>>>> 5a6a4f6f3faf1452f8429bd6803c2d8901fb8855
+<<<<<<< HEAD
 =======
     - _EnvironmentReflections: 1
 >>>>>>> parent of 5c4594a... Added pause menu prefab
+=======
+>>>>>>> 052c254d3a515f39ab8f70c7f21f9fe8c4bcb4dc
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
