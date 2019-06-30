@@ -100,26 +100,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Jump:
-    ButtonIDs: []
+    ButtonIDs:
+    - Jump
     KeyIDs:
     - space
   MovementX:
-    AxisIDs: []
+    AxisIDs:
+    - LeftStickX
     KeyIDs:
     - Negative: a
       Positive: d
   MovementY:
-    AxisIDs: []
+    AxisIDs:
+    - LeftStickY
     KeyIDs:
     - Negative: s
       Positive: w
   CameraX:
     AxisIDs:
     - Mouse X
+    - RightStickX
     KeyIDs: []
   CameraY:
     AxisIDs:
-    - Mouse Y
+    - RightStickY
     KeyIDs: []
 --- !u!54 &48230964666383299
 Rigidbody:
@@ -186,6 +190,7 @@ MonoBehaviour:
   InputTransition: 0
   MouseSensitivity: 2
   CameraZDistance: 1
+  PLAYERLOCK: 1
 --- !u!114 &6638133848671360740
 MonoBehaviour:
   m_ObjectHideFlags: 0
