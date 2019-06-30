@@ -9,6 +9,8 @@ public class MainMenuController : MonoBehaviour
 {
     AudioManager audioManager;
     public Animator BlurFade;
+    public Animator CircleFade;
+    public GameObject optionsmenu;
 
     void Start()
     {
@@ -164,5 +166,32 @@ public class MainMenuController : MonoBehaviour
     {
         Debug.Log("Quitting Game");     // types out ~Quitting Game~
         Application.Quit();             // and quits game
+    }
+
+    //Matt's added functions
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("leveltest");
+    }
+
+    public void Options()
+    {
+        optionsmenu.SetActive(true);
+    }
+
+    public void CloseOptions()
+    {
+        optionsmenu.SetActive(false);
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void RestartLevel()
+    {
+         SceneManager.LoadScene("leveltest");
     }
 }
