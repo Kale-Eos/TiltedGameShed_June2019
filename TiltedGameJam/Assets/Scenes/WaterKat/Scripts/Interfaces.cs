@@ -4,18 +4,11 @@ using UnityEngine;
 
 namespace WaterKat
 {
-    public class WKEntity
+    public interface IEntity
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+        int Health { get; set; }
+        void Heal(int _heal);
+        void Damage(int _damage);
+        void Die();
     }
 }

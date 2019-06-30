@@ -2,34 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class PlayerHealth : MonoBehaviour
+namespace WaterKat
 {
-    [SerializeField]
-    private int health;
-    [SerializeField]
-    private int maxHealth;
-
-
-    public void Damage(int amount)
+    public class PlayerHealth : MonoBehaviour, IEntity
     {
-        if (amount == 0) { amount = 10; }
-        health -= amount;
-        if (amount <= 0)
+        [SerializeField]
+        private int health;
+        [SerializeField]
+        private int maxHealth;
+
+        public int Health { get { return health; } set { health = value; } }
+
+        public void Damage(int amount)
         {
-            Die();
+            if (amount == 0) { amount = 10; }
+            health -= amount;
+            if (amount <= 0)
+            {
+                Die();
+            }
         }
-    }
 
-    public void Heal(int amount)
-    {
-        health += amount;
-        health = (int)Mathf.Min(health, maxHealth);
-    }
+        public void Heal(int amount)
+        {
+            health += amount;
+            health = (int)Mathf.Min(health, maxHealth);
+        }
 
-    [ContextMenu("DealDamage")]
-    void Die()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        [ContextMenu("DealDamage")]
+        public void Die()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }
