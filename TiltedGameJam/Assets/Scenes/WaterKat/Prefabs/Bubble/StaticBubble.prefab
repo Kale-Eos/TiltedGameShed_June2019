@@ -59,7 +59,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84a0ba637219a7e47b56119b7302cac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounce: 20
+  bounce: 50
+  testbox: {fileID: 0}
 --- !u!54 &1977898842
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -134,7 +135,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dce266ade9a40df4b9d824de752e382a, type: 2}
+  - {fileID: 2100000, guid: a5e19701c46fe3140bc610fc5f269857, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
