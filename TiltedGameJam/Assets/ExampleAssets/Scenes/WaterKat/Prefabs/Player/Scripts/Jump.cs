@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+
 namespace WaterKat {
     public class Jump : MonoBehaviour
     {
@@ -82,6 +83,8 @@ namespace WaterKat {
             {
                 AvailableJumps -= 1;
                 JumpState = PlayerJumpState.Jumping;
+
+                WKAudio.PlayAudio("Jump");
 
                 if (Grounded)
                 {

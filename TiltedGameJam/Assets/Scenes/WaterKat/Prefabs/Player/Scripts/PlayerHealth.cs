@@ -32,7 +32,16 @@ namespace WaterKat
         [ContextMenu("DealDamage")]
         public void Die()
         {
+            WKAudio.PlayAudio("Death");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        private void Update()
+        {
+            if (Input.GetKey("i"))
+            {
+                Die();
+            }
         }
     }
 }
