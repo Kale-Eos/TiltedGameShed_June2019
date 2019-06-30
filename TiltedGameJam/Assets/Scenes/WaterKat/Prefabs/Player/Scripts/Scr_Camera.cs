@@ -50,22 +50,26 @@ namespace WaterKat
             Cursor.visible = false;
         }
 
+        public bool PLAYERLOCK = true;
         private void Update()
         {
-            if (Input.GetKey("escape"))
+            if (PLAYERLOCK)
             {
-                UnityEditor.EditorApplication.isPlaying = false;
-            }
-            if (Input.GetKey("`"))
-            {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-            }
-            if (Input.GetMouseButton(0))
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+                if (Input.GetKey("escape"))
+                {
+                    UnityEditor.EditorApplication.isPlaying = false;
+                }
+                if (Input.GetKey("`"))
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                }
+                if (Input.GetMouseButton(0))
+                {
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
 
+                }
             }
         }
 

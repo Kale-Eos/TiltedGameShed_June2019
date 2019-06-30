@@ -8,8 +8,15 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Bubble
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 26facdd15015e8ffd979cdbefc18c1eaedc4f856
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+=======
   m_Shader: {fileID: -6465566751694194690, guid: 045b7f5bc6d14994c9da7b6498e76fd4,
     type: 3}
+>>>>>>> 7291a5e3ff5e1c21852e533c7f2785e36ab6ece8
   m_ShaderKeywords: _ENVIRONMENTREFLECTIONS_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0

@@ -7,6 +7,11 @@ namespace WaterKat {
     {
         [SerializeField]
         private float bounce = 20;
+        public GameObject testbox;
+        private void Start()
+        {
+            testbox = transform.Find("HitBox").gameObject;
+        }
 
         public void Die()
         {
@@ -15,6 +20,7 @@ namespace WaterKat {
 
         private void OnCollisionEnter(Collision collision)
         {
+            Debug.Log(collision.collider.gameObject);
             Player testplayer = collision.collider.gameObject.GetComponent<Player>();
             if (testplayer != null)
             {
@@ -24,15 +30,17 @@ namespace WaterKat {
                     rb.velocity = rb.velocity + (Vector3.up * bounce);
 
                 }
+                /*
                 Jump jump = collision.collider.gameObject.GetComponent<Jump>();
                 if (jump != null)
                 {
                     jump.JumpState = Jump.PlayerJumpState.SlowFalling;
 
-                }
+                }*/
             }
+
             WKAudio.PlayAudio("Pop");
-            Destroy(this.gameObject);
+            Die();
         }
     }
 }
