@@ -11,4 +11,16 @@ namespace WaterKat
         void Damage(int _damage);
         void Die();
     }
+
+    public class WKAudio
+    {
+        public static void PlayAudio(string name)
+        {
+            AudioManager manager = MonoBehaviour.FindObjectOfType<AudioManager>();   
+            if (manager != null)
+            {
+                manager.PlaySound(name);
+            }
+        }
+    }
 }
