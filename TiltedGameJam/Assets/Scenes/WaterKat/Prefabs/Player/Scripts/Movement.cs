@@ -85,7 +85,7 @@ namespace WaterKat
                 }
             }
             //Debug.Log("Moving");
-            transform.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(DirectionalVelocity.x, transform.gameObject.GetComponent<Rigidbody>().velocity.y, DirectionalVelocity.z));
+            transform.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(DirectionalVelocity.x, 0, DirectionalVelocity.z));
           /*  if (DirectionalVelocity.magnitude < 0.5f)
             {
                 transform.gameObject.GetComponent<Rigidbody>().AddForce(-transform.gameObject.GetComponent<Rigidbody>().velocity);
