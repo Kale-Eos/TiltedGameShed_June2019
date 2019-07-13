@@ -40,6 +40,7 @@ namespace WaterKat
 
         public float CameraZDistance = 1;
 
+        public bool lockcursor = false;
 
         void Start()
         {
@@ -48,8 +49,11 @@ namespace WaterKat
             PlayerTransform = transform.Find("HitBox");
             PlayerRigidBody = PlayerTransform.gameObject.GetComponent<Rigidbody>();
 
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            if (lockcursor)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
   
         }
 

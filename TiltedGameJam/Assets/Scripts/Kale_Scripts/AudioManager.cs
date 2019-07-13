@@ -51,6 +51,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;    // identifies AudioManager
 
     [SerializeField]                        // instantiates field
+
     Sound[] sounds;                         // instantiates Sound array
 
     void Awake()

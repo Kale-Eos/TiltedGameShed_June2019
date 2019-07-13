@@ -86,3 +86,66 @@ MonoBehaviour:
     RandomVolume: 0
     RandomTempo: 0
     loop: 0
+  - name: One
+    clip: {fileID: 8300000, guid: 1cde90474d5389b44bf86f0d07afb9f4, type: 3}
+    volume: 1
+    tempo: 1
+    RandomVolume: 0
+    RandomTempo: 0
+    loop: 0
+  - name: Two
+    clip: {fileID: 8300000, guid: bcaa07cc6c39e39438581ff75e31c7b3, type: 3}
+    volume: 1
+    tempo: 1
+    RandomVolume: 0
+    RandomTempo: 0
+    loop: 0
+  - name: Three
+    clip: {fileID: 8300000, guid: 73165fd6b3f571b4d94d10f864e4b9ce, type: 3}
+    volume: 1
+    tempo: 1
+    RandomVolume: 0
+    RandomTempo: 0
+    loop: 0
+  - name: Four
+    clip: {fileID: 8300000, guid: 93ef360f7bb08b4448fb632939b59fbf, type: 3}
+    volume: 1
+    tempo: 1
+    RandomVolume: 0
+    RandomTempo: 0
+    loop: 0
+  - name: Five
+    clip: {fileID: 8300000, guid: 42ca84bb4ea8c9145b0d77a94dbf0556, type: 3}
+    volume: 1
+    tempo: 1
+    RandomVolume: 0
+    RandomTempo: 0
+    loop: 0
+  - name: Music
+    clip: {fileID: 8300000, guid: 8b4b0462069d6134c825ba151c0ca615, type: 3}
+    volume: 0.5
+    tempo: 1
+    RandomVolume: 0
+    RandomTempo: 0
+    loop: 0
+  - name: ButtonPress
+    clip: {fileID: 8300000, guid: 7f63876440624194796696ab37e022c0, type: 3}
+    volume: 1
+    tempo: 1
+    RandomVolume: 0
+    RandomTempo: 0
+    loop: 0
+  - name: ButtonHover
+    clip: {fileID: 8300000, guid: 823685431a580ab4d905fc004d4a7048, type: 3}
+    volume: 1
+    tempo: 1
+    RandomVolume: 0
+    RandomTempo: 0
+    loop: 0
+  - name: GameOver
+    clip: {fileID: 8300000, guid: 8b4b0462069d6134c825ba151c0ca615, type: 3}
+    volume: 1
+    tempo: 0.75
+    RandomVolume: 0
+    RandomTempo: 0
+    loop: 0

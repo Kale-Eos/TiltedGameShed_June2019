@@ -8,6 +8,7 @@ namespace WaterKat {
     {
         [SerializeField]
         float time;
+        [SerializeField]
         float maxTime = 10;
         public Vector3 rectTransform;
         // Start is called before the first frame update
@@ -26,7 +27,7 @@ namespace WaterKat {
             time -= Time.deltaTime;
             time = Mathf.Max(0, time);
 
-            GetComponent<Text>().text = "Time : " + Mathf.Floor(time);
+            GetComponent<Text>().text = "Time " + Mathf.Floor(time/60)+":" + Mathf.Floor(time%60).ToString("00");
 
             for (int i = 0; i < 5; i++)
             {
@@ -34,19 +35,23 @@ namespace WaterKat {
                 {
                     TimerManager.AddLoopedTask(Throb, 1);
                     signed[i] = true;
-                    WKAudio.PlayAudio("Alarm" + Alarms[i]);
+                    WKAudio.PlayAudio("" + Alarms[i]);
                 }
             }
             
 
             if (time <= 0)
             {
+                TimerManager.AddLoopedTask(Throb, 1);
+                WKAudio.PlayAudio("Death");
+                AudioManager.instance.StopSound("Music");
+                WKAudio.PlayAudio("GameOver");
                 SceneManager.LoadScene("GameOver");
             }
         }
         void Throb(float testvalue)
         {
-            this.gameObject.GetComponent<RectTransform>().localScale = rectTransform * (2*Mathf.Clamp(1-testvalue,0.5f,1));
+            this.gameObject.GetComponent<RectTransform>().localScale = rectTransform * Mathf.Lerp(.75f,1.05f,testvalue);
         }
     }
 }

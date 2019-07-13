@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8662611908316530599}
   - component: {fileID: 8662611908316530600}
   m_Layer: 0
-  m_Name: AudioManager
+  m_Name: AudioManager_Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,16 +45,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: ButtonPress
-    clip: {fileID: 0}
-    volume: 0
-    tempo: 0
+    clip: {fileID: 8300000, guid: 034fadfbc9dd9434a891116d90b7fae8, type: 3}
+    volume: 1
+    tempo: 1
     RandomVolume: 0
     RandomTempo: 0
     loop: 0
   - name: ButtonHover
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 7f63876440624194796696ab37e022c0, type: 3}
     volume: 0.5
-    tempo: 0
+    tempo: 1
+    RandomVolume: 0
+    RandomTempo: 0.156
+    loop: 0
+  - name: Music
+    clip: {fileID: 8300000, guid: 8b4b0462069d6134c825ba151c0ca615, type: 3}
+    volume: 0.5
+    tempo: 1
     RandomVolume: 0
     RandomTempo: 0
     loop: 0

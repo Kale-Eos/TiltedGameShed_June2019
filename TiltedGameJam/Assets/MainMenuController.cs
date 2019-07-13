@@ -164,6 +164,7 @@ public class MainMenuController : MonoBehaviour
 
     public void QuitGame()
     {
+        audioManager.PlaySound(pressButtonSound);
         Debug.Log("Quitting Game");     // types out ~Quitting Game~
         Application.Quit();             // and quits game
     }
@@ -172,16 +173,19 @@ public class MainMenuController : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("SceneJ1");
+        audioManager.PlaySound(pressButtonSound);
+        SceneManager.LoadScene("Level1");
     }
 
     public void Options()
     {
+        audioManager.PlaySound(pressButtonSound);
         optionsmenu.SetActive(true);
     }
 
     public void CloseOptions()
     {
+        audioManager.PlaySound(pressButtonSound);
         optionsmenu.SetActive(false);
     }
 
@@ -192,7 +196,8 @@ public class MainMenuController : MonoBehaviour
 
     public void RestartLevel()
     {
-         SceneManager.LoadScene("SceneJ1");
+        audioManager.PlaySound(pressButtonSound);
+        SceneManager.LoadScene("SceneJ1");
         Time.timeScale = 1;
     }
 }
