@@ -103,7 +103,7 @@ namespace WaterKat
             //CameraYRotation = Mathf.Clamp(CameraYRotation, CameraYClamp.x, CameraYClamp.y);
 
 
-            GetComponent<Movement>().speed = Mathf.Lerp(10f, 20f, inputTransition);
+            //GetComponent<Movement>().speed = Mathf.Lerp(GetComponent<Movement>().speed/2, GetComponent<Movement>().speed , inputTransition);
 
             InputTransition = Mathf.Pow(inputTransition, 3) * (inputTransition * (6f * inputTransition - 15f) + 10f);
 

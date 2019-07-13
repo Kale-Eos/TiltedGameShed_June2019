@@ -13,6 +13,7 @@ namespace WaterKat
         //  float CharacterAngle;
         bool IsGrounded = false;
         public float speed;
+        public float MaxVelocity;
 
         private class GameForce
         {
@@ -85,7 +86,11 @@ namespace WaterKat
                 }
             }
             //Debug.Log("Moving");
-            transform.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(DirectionalVelocity.x, 0, DirectionalVelocity.z));
+            Vector3 newVelocity = transform.gameObject.GetComponent<Rigidbody>().velocity + (new Vector3(DirectionalVelocity.x, 0, DirectionalVelocity.z) * Time.deltaTime);
+            if (newVelocity.magnitude < MaxVelocity)
+            {
+                transform.gameObject.GetComponent<Rigidbody>().velocity += (new Vector3(DirectionalVelocity.x, 0, DirectionalVelocity.z) * Time.deltaTime);
+            }
           /*  if (DirectionalVelocity.magnitude < 0.5f)
             {
                 transform.gameObject.GetComponent<Rigidbody>().AddForce(-transform.gameObject.GetComponent<Rigidbody>().velocity);
