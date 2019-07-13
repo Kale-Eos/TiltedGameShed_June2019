@@ -211,18 +211,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &845709831 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4529421069956329869, guid: e0a7702e1654d1d47ae3874cc760e520,
-    type: 3}
-  m_PrefabInstance: {fileID: 4529421070251471754}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8f59bf74013b9945a3b17d2e4a211b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &978446455
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,30 +309,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -1286279445014934193, guid: 2153a6ec4376fba499c0a9755ee20a98,
-        type: 3}
-      propertyPath: DesiredPosition.x
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: -1286279445014934193, guid: 2153a6ec4376fba499c0a9755ee20a98,
-        type: 3}
-      propertyPath: bounce
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1978787691420596108, guid: 2153a6ec4376fba499c0a9755ee20a98,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
     - target: {fileID: 4406554828666701240, guid: 2153a6ec4376fba499c0a9755ee20a98,
         type: 3}
       propertyPath: m_Name
       value: Bubble
-      objectReference: {fileID: 0}
-    - target: {fileID: 4944520224395531119, guid: 2153a6ec4376fba499c0a9755ee20a98,
-        type: 3}
-      propertyPath: m_CastShadows
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5492073503999669750, guid: 2153a6ec4376fba499c0a9755ee20a98,
         type: 3}
@@ -403,18 +371,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2153a6ec4376fba499c0a9755ee20a98, type: 3}
---- !u!114 &1448121507 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 48230964666383298, guid: 5e37fd1fa24742f41a1641936aa208e8,
-    type: 3}
-  m_PrefabInstance: {fileID: 48230965978181473}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8f64b623e37aef4c8ae1f72ee4949a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1591262831
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,6 +462,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1649607197 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 48230964666383356, guid: 5e37fd1fa24742f41a1641936aa208e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 48230965978181473}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1770084447
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -522,6 +484,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855978431695708013, guid: 064a5a2a999f0784089bf9b2121f8ba1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5762043554901531091, guid: 064a5a2a999f0784089bf9b2121f8ba1,
         type: 3}
@@ -738,15 +705,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 163414239, guid: 5e37fd1fa24742f41a1641936aa208e8, type: 3}
-      propertyPath: cameraScript
+    - target: {fileID: 48230964666383296, guid: 5e37fd1fa24742f41a1641936aa208e8,
+        type: 3}
+      propertyPath: GroundDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 48230964666383296, guid: 5e37fd1fa24742f41a1641936aa208e8,
+        type: 3}
+      propertyPath: gameObject
       value: 
-      objectReference: {fileID: 1448121507}
+      objectReference: {fileID: 1649607197}
+    - target: {fileID: 48230964666383297, guid: 5e37fd1fa24742f41a1641936aa208e8,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 48230964666383357, guid: 5e37fd1fa24742f41a1641936aa208e8,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 48230964666383358, guid: 5e37fd1fa24742f41a1641936aa208e8,
         type: 3}
-      propertyPath: audioManager
-      value: 
-      objectReference: {fileID: 845709831}
+      propertyPath: GroundJumpHeight
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 48230964666383358, guid: 5e37fd1fa24742f41a1641936aa208e8,
+        type: 3}
+      propertyPath: AirJumpHeight
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 48230965800359108, guid: 5e37fd1fa24742f41a1641936aa208e8,
         type: 3}
       propertyPath: m_LocalPosition.x

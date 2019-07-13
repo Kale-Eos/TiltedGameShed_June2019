@@ -174,6 +174,8 @@ public class MainMenuController : MonoBehaviour
     public void StartGame()
     {
         audioManager.PlaySound(pressButtonSound);
+        AudioManager.instance.StopSound("GameOver");
+        AudioManager.instance.PlaySound("Music");
         SceneManager.LoadScene("Level1");
     }
 
@@ -197,7 +199,7 @@ public class MainMenuController : MonoBehaviour
     public void RestartLevel()
     {
         audioManager.PlaySound(pressButtonSound);
-        SceneManager.LoadScene("SceneJ1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1;
     }
 }

@@ -76,8 +76,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  bounce: 20
+  bounce: 50
   DesiredPosition: {x: 12, y: 0, z: 0}
+  hitBox: {fileID: 6013114921000383254}
 --- !u!1 &6013114921000383254
 GameObject:
   m_ObjectHideFlags: 0

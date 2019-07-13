@@ -12,7 +12,9 @@ namespace WaterKat {
         [SerializeField]
         private float bounce = 20;
         public Vector3 DesiredPosition = Vector3.zero;
-                
+
+        public GameObject hitBox;
+
         public int Health { get { return health; } set { } }
 
         public void Damage(int _damage)
@@ -33,7 +35,19 @@ namespace WaterKat {
         // Start is called before the first frame update
         void Start()
         {
+        
+        }
 
+        public void Invis()
+        {
+            hitBox.GetComponent<Collider>().enabled = false;
+            hitBox.GetComponent<MeshRenderer>().enabled = false;
+        }
+
+        public void Vis()
+        {
+            hitBox.GetComponent<Collider>().enabled = true;
+            hitBox.GetComponent<MeshRenderer>().enabled = true;
         }
 
         // Update is called once per frame
@@ -57,7 +71,9 @@ namespace WaterKat {
                 Rigidbody rb = collision.collider.gameObject.GetComponent<Rigidbody>();
                 if (rb!= null)
                 {
-                    rb.velocity = rb.velocity + (Vector3.up * bounce);
+                    Vector3 newV = rb.velocity;
+                    newV.y = bounce;
+                    rb.velocity = newV;
 
                 }
                 Jump jump = collision.collider.gameObject.GetComponent<Jump>();
@@ -68,7 +84,8 @@ namespace WaterKat {
                 }
             }
             WKAudio.PlayAudio("Pop");
-            Destroy(this.gameObject);
+            Invis();
+            TimerManager.AddTask(Vis, 3);
         }
     }
 }

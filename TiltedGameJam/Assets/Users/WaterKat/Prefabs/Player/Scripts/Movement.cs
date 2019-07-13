@@ -10,9 +10,12 @@ namespace WaterKat
         GameForce PlayerGameForce = GameForce.Zero;
         List<GameForce> LocalForceList = new List<GameForce>();
 
+        Rigidbody rigidbody;
+
         //  float CharacterAngle;
         bool IsGrounded = false;
         public float speed;
+        public float maxSpeed;
 
         private class GameForce
         {
@@ -44,8 +47,6 @@ namespace WaterKat
 
         }
 
-
-
         private bool CheckIfGrounded()
         {
             Vector3 thing;
@@ -56,6 +57,7 @@ namespace WaterKat
         private void Start()
         {
             CurrentPlayer = GetComponent<Player>();
+            rigidbody = GetComponent<Rigidbody>();
         }
 
         public PhysicMaterial Move;
@@ -85,11 +87,15 @@ namespace WaterKat
                 }
             }
             //Debug.Log("Moving");
-            transform.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(DirectionalVelocity.x, 0, DirectionalVelocity.z));
-          /*  if (DirectionalVelocity.magnitude < 0.5f)
+            Vector3 nextVelocity = rigidbody.velocity + new Vector3(DirectionalVelocity.x, 0, DirectionalVelocity.z)*Time.deltaTime;
+            if (nextVelocity.magnitude < maxSpeed)
+            {
+                rigidbody.velocity = nextVelocity;
+            }
+            if (DirectionalVelocity.magnitude < 0.5f)
             {
                 transform.gameObject.GetComponent<Rigidbody>().AddForce(-transform.gameObject.GetComponent<Rigidbody>().velocity);
-            }*/
+            }
         }
     }
 }

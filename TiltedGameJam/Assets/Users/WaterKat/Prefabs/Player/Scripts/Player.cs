@@ -13,7 +13,7 @@ namespace WaterKat
         public bool CheckIfGrounded()
         {
             bool Grounded = false;
-            Ray downwards = new Ray(gameObject.position, Vector3.down * (1 - SphereRadius + GroundDistance));
+            Ray downwards = new Ray(gameObject.position, Vector3.down * GroundDistance);
             RaycastHit hit;
 
             if (Physics.Raycast(downwards,  out hit, downwards.direction.magnitude))
