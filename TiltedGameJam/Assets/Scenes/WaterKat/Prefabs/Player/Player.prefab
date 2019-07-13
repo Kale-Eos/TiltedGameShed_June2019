@@ -123,6 +123,10 @@ MonoBehaviour:
     KeyIDs: []
   CameraY:
     AxisIDs:
+<<<<<<< HEAD
+=======
+    - Mouse Y
+>>>>>>> Gamepad support woohoo!!!!
     - RightStickY
     KeyIDs: []
 --- !u!54 &48230964666383299
