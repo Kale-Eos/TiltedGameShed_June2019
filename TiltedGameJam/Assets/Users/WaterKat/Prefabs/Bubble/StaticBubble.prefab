@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5492073503999669750}
   - component: {fileID: 8223998441960342084}
-  - component: {fileID: 7656654783794458007}
   - component: {fileID: 1977898842}
+  - component: {fileID: 963937682390829602}
   m_Layer: 0
   m_Name: StaticBubble
   m_TagString: Untagged
@@ -43,24 +43,10 @@ SphereCollider:
   m_GameObject: {fileID: 4406554828666701240}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7656654783794458007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4406554828666701240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84a0ba637219a7e47b56119b7302cac8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounce: 50
-  testbox: {fileID: 0}
 --- !u!54 &1977898842
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -77,6 +63,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &963937682390829602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4406554828666701240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65040ae3df60fad47a60e7533194f401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  bounce: 50
+  DesiredPosition: {x: 0, y: 0, z: 0}
+  hitBox: {fileID: 6013114921000383254}
 --- !u!1 &6013114921000383254
 GameObject:
   m_ObjectHideFlags: 0

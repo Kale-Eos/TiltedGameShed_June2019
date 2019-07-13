@@ -1,13 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace WaterKat
 {
     public class Player : MonoBehaviour
     {
         #region "Grounded"
-        public float GroundDistance = 0.5f;
+        public float GroundDistance = 2f;
         float SphereRadius =0f;
         public Transform gameObject;
         public bool CheckIfGrounded()
@@ -16,12 +18,15 @@ namespace WaterKat
             Ray downwards = new Ray(gameObject.position, Vector3.down * GroundDistance);
             RaycastHit hit;
 
-            if (Physics.Raycast(downwards,  out hit, downwards.direction.magnitude))
+            if (Physics.Raycast(downwards,  out hit, GroundDistance*2))
             {
                 Grounded = true;
             }
             return Grounded;
         }
+
+
+
         public bool CheckIfGrounded(out Vector3 _groundVelocity)
         {
             bool Grounded = false;
@@ -41,6 +46,20 @@ namespace WaterKat
         }
         #endregion
 
+        internal void Die()
+        {
+            WKAudio.PlayAudio("Death");
+            AudioManager.instance.StopSound("Music");
+            WKAudio.PlayAudio("GameOver");
+            SceneManager.LoadScene("GameOver");
+        }
+        internal void Win()
+        {
+
+            AudioManager.instance.StopSound("Music");
+            WKAudio.PlayAudio("Win");
+            SceneManager.LoadScene("Winner");
+        }
 
     }
 }

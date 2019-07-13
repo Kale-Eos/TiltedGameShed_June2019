@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace WaterKat {
+namespace WaterKat
+{
     public class Bubble : MonoBehaviour, IEntity
     {
         int health = 1;
@@ -35,7 +36,7 @@ namespace WaterKat {
         // Start is called before the first frame update
         void Start()
         {
-        
+
         }
 
         public void Invis()
@@ -56,7 +57,7 @@ namespace WaterKat {
             Vector3 difference = DesiredPosition - transform.position;
             if (difference.magnitude > 0.5)
             {
-                GetComponent<Rigidbody>().velocity = difference.normalized * speed * Mathf.Pow(difference.magnitude,2);
+                GetComponent<Rigidbody>().velocity = difference.normalized * speed * Mathf.Pow(difference.magnitude, 2);
             }
             else
             {
@@ -69,11 +70,17 @@ namespace WaterKat {
             if (testplayer != null)
             {
                 Rigidbody rb = collision.collider.gameObject.GetComponent<Rigidbody>();
-                if (rb!= null)
+                if (rb != null)
                 {
                     Vector3 newV = rb.velocity;
                     newV.y = bounce;
+                    if (collision.GetContact(0).point.y < transform.position.y)
+                    {
+                        newV.y *= -1;
+                    }
+
                     rb.velocity = newV;
+
 
                 }
                 Jump jump = collision.collider.gameObject.GetComponent<Jump>();

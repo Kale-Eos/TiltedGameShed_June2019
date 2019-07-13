@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f72f21ffc317bd4cb610a197dc9ea03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GroundDistance: 1.5
+  GroundDistance: 1.6
   gameObject: {fileID: 48230966432509408}
 --- !u!114 &48230964666383297
 MonoBehaviour:
@@ -66,7 +66,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bca726faefc4944998da7634b3099f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 80
+  speed: 50
+  maxSpeed: 25
   Move: {fileID: 0}
   Stay: {fileID: 0}
 --- !u!114 &48230964666383358
@@ -83,8 +84,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JumpState: 0
   MaxAvailableJumps: 2
-  GroundJumpHeight: 3
-  AirJumpHeight: 3
+  GroundJumpHeight: 4
+  AirJumpHeight: 4
   GroundJumpTime: 0.5
   FallingGravityRatio: 1.5
 --- !u!114 &48230964666383359
@@ -126,6 +127,10 @@ MonoBehaviour:
     - Mouse Y
     - RightStickY
     KeyIDs: []
+  CameraZ:
+    AxisIDs:
+    - TriggerZ
+    KeyIDs: []
 --- !u!54 &48230964666383299
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -149,7 +154,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 48230964666383354}
-  m_Material: {fileID: 13400000, guid: 3b94c30d8a59ad54781f2f411ad85691, type: 2}
+  m_Material: {fileID: 13400000, guid: 7baf5b692424c264ab5e0ebb6f60de70, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

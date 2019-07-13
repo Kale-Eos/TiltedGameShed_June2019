@@ -68,7 +68,7 @@ namespace WaterKat
             Vector3 Direction = new Vector3(WKInput.instance.MovementX.Get(), 0, WKInput.instance.MovementY.Get());
             Vector3 DirectionalVelocity = (Quaternion.Euler(0, Camera.main.transform.rotation.eulerAngles.y, 0) * Direction * speed);
 
-
+            /*
             if (!CurrentPlayer.CheckIfGrounded())
             {
                 GetComponent<Collider>().material = Move;
@@ -86,6 +86,8 @@ namespace WaterKat
                     GetComponent<Collider>().material = Move;
                 }
             }
+            */
+
             //Debug.Log("Moving");
             Vector3 nextVelocity = rigidbody.velocity + new Vector3(DirectionalVelocity.x, 0, DirectionalVelocity.z)*Time.deltaTime;
             if (nextVelocity.magnitude < maxSpeed)

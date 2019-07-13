@@ -90,6 +90,7 @@ namespace WaterKat
         {
 
                 inputTransition = Mathf.Clamp(inputTransition + -Input.mouseScrollDelta.y*CameraZoomSpeed, 0, 1);
+            inputTransition = Mathf.Clamp(inputTransition + WKInput.instance.CameraZ.Get()*CameraZoomSpeed, 0, 1);
 
 
             CameraXRotation += -WKInput.instance.CameraY.Get() * MouseSensitivity * Mathf.Clamp(1f, 1.25f, CameraXClamp.y);

@@ -129,6 +129,8 @@ public class WKInput : MonoBehaviour
     public InputAxis CameraX;
     public InputAxis CameraY;
 
+    public InputAxis CameraZ;
+
     private void Awake()
     {
         instance = this;
